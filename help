@@ -1,0 +1,4 @@
+// Core Examples
+// cy.get('#submit-btn');                  // By ID
+// cy.get('.nav-link');                    // By Class
+// cy.get('[data-cy="login-input"]');       // By Custom Attribute (Best Practice)
