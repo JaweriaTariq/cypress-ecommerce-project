@@ -9,6 +9,9 @@ class LoginPage{
     loginButton() {
         return cy.get('#login-button');
     }
+    loginErrorMsg() {
+        return cy.get('[data-test="error"]').should('be.visible').and('have.text', 'Epic sadface: Sorry, this user has been locked out.');
+    }
 
     //Login Page methods
     enterUsername(username) {
@@ -25,5 +28,12 @@ class LoginPage{
         this.enterPassword(password);
         this.clickLogin();
     }
+    loginErrorMessage() {
+        this.loginErrorMessage().should('be.visible');
+    }
+
+    //            cy.get('[data-test="title"]').should('be.visible').and('have.text', 'Products');
+
+
 }
 export default LoginPage;

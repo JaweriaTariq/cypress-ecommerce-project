@@ -17,4 +17,13 @@ describe("Login Tests", () => {
             cy.get('[data-test="title"]').should('be.visible').and('have.text', 'Products');
         });
     });
+
+    it("should show error for invalid user", () => {
+        cy.fixture("users").then((user) => {
+            login.login(
+                user.lockedOutUser.username,
+                user.lockedOutUser.password
+            );
+        });
+    });
 });
